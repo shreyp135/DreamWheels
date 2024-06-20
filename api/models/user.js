@@ -1,4 +1,4 @@
-import {db} from "../utils/database.js";
+import dbm from "../utils/databaseConfig.js";
 
 //function to create an user
 export const createUser = async (data) => {
@@ -8,5 +8,5 @@ export const createUser = async (data) => {
 
 //function to fetch the details of user
 export const findUserByEmail = async (email) => {
-  return await db.collection("users").findOne({email});
+  return await dbm.collection("users").findOne({email});
 };

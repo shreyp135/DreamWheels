@@ -1,5 +1,5 @@
 import { createDeal, getDealsByDealership } from "../models/Deal.js";
-import { asyncHandler } from "../utils/errorHandling.js";
+import { asyncHandler } from "../utils/errorHandlers.js";
 
 export const getDealsInDealership = asyncHandler(async (req, res) => {
   const { dealershipId } = req.params;

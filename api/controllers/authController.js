@@ -2,12 +2,12 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { createUser, findUserByEmail } from "../models/user.js";
 import { createDealership, findDealershipByEmail } from "../models/Dealership.js";
-import { asyncHandler } from "../utils/errorHandling.js";
+import { asyncHandler } from "../utils/errorHandlers.js";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-export const singupUser = asyncHandler(async (req, res) => {
+export const signupUser = asyncHandler(async (req, res) => {
   const { email, password, location, info } = req.body;
   const hashedPassword = await bcrypt.hash(password, 8);
   const user = await createUser({ email, password: hashedPassword, location, info });

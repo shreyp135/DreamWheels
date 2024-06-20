@@ -1,5 +1,5 @@
 import { createCar, getAllCars, getCarsByDealership } from "../models/Car.js";
-import { asyncHandler } from "../utils/errorHandling.js";
+import { asyncHandler } from "../utils/errorHandlers.js";
 
 export const getCars = asyncHandler(async (req, res) => {
   const cars = await getAllCars();

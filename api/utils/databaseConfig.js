@@ -14,7 +14,7 @@ let db;
 
 //connection to the database
 export const connectMongo = async () =>{
-   await client.connect();
+   await client.connect({wtimeoutMS: 2500});
   console.log("Connected successfully to MongoDB server");
   db = client.db(dbName);
 };
