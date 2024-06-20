@@ -18,11 +18,11 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 //routes
-app.use('/api/user', userRoutes);
-app.use('/api/auth', authRoutes);
-app.use('/api/dealership', dealershipRoutes);
-app.use('/api/cars', carRoutes);
-app.use('/api/deals', dealRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/dealership", dealershipRoutes);
+app.use("/api/cars", carRoutes);
+app.use("/api/deals", dealRoutes);
 
 
 //error handling
