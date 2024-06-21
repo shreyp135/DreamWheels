@@ -7,7 +7,7 @@ import userRoutes from "./routes/userRoutes.js";
 import dealershipRoutes from "./routes/dealershipRoutes.js";
 import carRoutes from "./routes/carRoutes.js";
 import dealRoutes from "./routes/dealRoutes.js";
-
+import cors from "cors";
 
 //env variables
 dotenv.config();
@@ -16,6 +16,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(cors);
 
 //routes
 app.use("/api/user", userRoutes);

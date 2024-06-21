@@ -9,7 +9,7 @@ dotenv.config();
 
 export const signupUser = asyncHandler(async (req, res) => {
   const { email, password, location, info } = req.body;
-  const hashedPassword = await bcrypt.hash(password, 8);
+  const hashedPassword = await bcrypt.hash(password, 1003);
   const user = await createUser({ email, password: hashedPassword, location, info });
   const token = jwt.sign({ email: user.email }, process.env.JWT_SECRET);
   res.status(201).json({ user, token });
@@ -17,7 +17,7 @@ export const signupUser = asyncHandler(async (req, res) => {
 
 export const signupDealership = asyncHandler(async (req, res) => {
   const { email, password, name, location, info } = req.body;
-  const hashedPassword = await bcrypt.hash(password, 8);
+  const hashedPassword = await bcrypt.hash(password,1003);
   const dealership = await createDealership({ email, password: hashedPassword, name, location, info });
   const token = jwt.sign({ email: dealership.email }, process.env.JWT_SECRET);
   res.status(201).json({ dealership, token });
